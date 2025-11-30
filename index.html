@@ -1,0 +1,53 @@
+<!-- Creator: Loa Andersson and Yuzhu Wang -->
+<!-- Date: 2024-10-19 -->
+<!-- For: WebGIS project in course NGEN26 Lund University -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Specie observation tool</title>
+    <!-- Links for styles -->
+    <link rel="stylesheet" href="node_modules/ol/ol.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Feature info popup -->
+    <div id="info"></div>
+    <!-- Title -->
+    <div id="title">
+      <span style="font-size: 24px;">Create you own specie observation map!</span>
+    </div>
+    <!-- Map canvas -->
+    <div id="map" class="map"></div>
+    <!-- Questionmark symbol -->
+    <div id="questions" class="ol-overlay">
+      <img id = qmark src="question-mark-1829459_1280.png" width="80" height="60">
+    </div>
+    <!-- Create row in matrix -->
+    <div class="row">
+      <!-- Size column with text length (col-auto) -->
+      <div class="col-auto">
+        <!-- Create group for options -->
+        <span class="input-group">
+          <!-- Create roll list of feature drawing options -->
+          <select class="form-select" id="type">
+            <option value="Feat">Add observation or label feature (Rightclick)</option>
+            <option value="LineString">Add Line (Leftclick)</option>
+            <option value="Polygon">Add Polygon (Leftclick)</option>
+          </select>
+          <input class="form-control" type="button" value="Undo vertex" id="undo">
+          <!-- Label popups -->
+          <div id="popup" class="ol-popup">
+            <div id="popup-content"></div>
+            <!-- PDF export function -->
+            <button id="exportMap" onclick="window.print()">Download mapview as PDF
+          </div>
+        </span>
+      </div>
+    </div>
+    <!-- Swiper for aerial photos -->
+    <input id="swipe" type="range" style="width: 100%">
+    <!-- Link to the main JavaScript -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

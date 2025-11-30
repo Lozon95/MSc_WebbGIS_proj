@@ -1,0 +1,171 @@
+/* 
+  Creator: Loa Andersson and Yuzhu Wang
+  Date: 2024-10-21
+  For: WebGIS project in course NGEN26 Lund University
+*/
+
+/*Template of css functions
+  position: absolute;
+  bottom: 35px;  Adjust distance from bottom 
+  left: 10px;  Adjust distance from left side 
+  z-index: 1000;  z-value is "hierarchy", higher = on top of lower 
+  padding: 10px 20px;  Adjust room around text 
+  background-color: #007bff;   
+  color: white;  
+  border: none;  No borderline
+  border-radius: 5px;  5px gives rounded corners 
+  cursor: pointer;  Create hand of cursor 
+  transform: translateX(-50%); Translate to distancens in side
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); Shadows behind
+*/
+
+/* Sets the displaying of map*/
+#map {
+  width: 100%;
+  height: 89vh;
+}
+/* Styles the table of feature info from GetFeatureInfo*/
+#info {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px 2px;
+  font-weight: bold;
+  border-radius: 0px;
+  background-color: #007bff;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  z-index: 510;
+}
+/* Styles the title*/
+#title {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  color: white;
+  padding-top: 10px;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  opacity: 0.8;
+  z-index: 500;
+}
+/* Swipe function for aerial image*/
+#swipe {
+  position: absolute;
+  bottom: 5px;
+  left: 0%;
+  height: 3px;
+  outline: none;
+  color: #007bff;
+  opacity: 0.9;
+}
+/* Styling for the labels*/
+.popup {
+  background-color: white;
+  border: 1px solid #090909;
+  border-radius: 5px;
+  padding: 1px;
+  position: relative;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  max-width: 200px;
+}
+/* Creates a triangular shape below the label like a arrow*/
+.popup::after{
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translate(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+/* For label text*/
+.popup-content{
+  font-size: 14px;
+}
+/* Position for questionmark*/
+.ol-overlay{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+/* For printing in .pdf
+@media print is a query to include and exclude map content*/
+@media print {
+  /* Adjust the display of the html body element*/
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+ /* Hides all titles and buttons in the printing*/
+  #map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  body * {
+    visibility: hidden;
+  }
+  /* Makes only the map and the labels visible*/
+  #map, #map * {
+    visibility: visible;
+  }
+  /* Adjust height and width of map on printing*/
+  #map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130%;
+    height: 130%;
+  }
+}
+/* Styles the export map button*/
+#exportMap {
+  position: absolute;
+  bottom: 35px; 
+  right: 10px; 
+  z-index: 1000;
+  padding: 10px 20px; 
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+/* Styles the roll list of drawing features options*/
+#type {
+  position: absolute;
+  bottom: 35px; 
+  left: 10px; 
+  z-index: 1000; 
+  padding: 10px 20px; 
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+/* Styles the undo button for drawing features*/
+#undo {
+  position: absolute;
+  bottom: 35px; 
+  left: 335px; 
+  z-index: 1000; 
+  padding: 10px 20px; 
+  background-color: #e83c53; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
