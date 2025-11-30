@@ -1,8 +1,3 @@
-// Creator: Loa Andersson and Yuzhu Wang
-// Date: 2024-10-21
-// For: WebGIS project in course NGEN26 Lund University
-
-
 // ##########################################
 // ############ Swipe function ##############
 // ##########################################
